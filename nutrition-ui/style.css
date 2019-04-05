@@ -1,0 +1,192 @@
+/* TYPOGRAPHY */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  /* regular is 400 in this font */
+  font-weight: 400;
+  /* we provide woff2 as the principal because its the most modern */
+  /* then we set the others as fallbacks */
+  src: url('./assets/fonts/muli/Muli-Regular.woff2'),
+       url('./assets/fonts/muli/Muli-Regular.woff'),
+       url('./assets/fonts/muli/Muli-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  /* bold is 700 in this font */
+  font-weight: 700;
+  /* we provide woff2 as the principal because its the most modern */
+  /* then we set the others as fallbacks */
+  src: url('./assets/fonts/muli/Muli-Bold.woff2'),
+       url('./assets/fonts/muli/Muli-Bold.woff'),
+       url('./assets/fonts/muli/Muli-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  /* black is 900 in this font */
+  font-weight: 900;
+  /* we provide woff2 as Blackncipal because its the most modern */
+  /* then we set the others as fallbacks */
+  src: url('./assets/fonts/muli/Muli-Black.woff2'),
+       url('./assets/fonts/muli/Muli-Black.woff'),
+       url('./assets/fonts/muli/Muli-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Yeseva One';
+  font-style: normal;
+  /* regular is 400 in this font */
+  font-weight: 400;
+  /* we provide woff2 as the principal because its the most modern */
+  /* then we set the others as fallbacks */
+  src: url('./assets/fonts/yeseva-one/YesevaOne-Regular.woff2'),
+       url('./assets/fonts/yeseva-one/YesevaOne-Regular.woff'),
+       url('./assets/fonts/yeseva-one/YesevaOne-Regular.ttf');
+}
+
+/* CUSTOM PROPERTIES */
+:root {
+  /* colorbook */
+  /* 011 and so on references to lighting % of the color */
+  --color-charcoal-011: #161c24;
+  --color-charcoal-021: #203342;
+  --color-charcoal-046: #737678;
+  --color-white: #fff;
+  --color-alarm-049: #ec110d;
+  --color-alarm-039: #bd0e0a;
+  --color-slate-blue-050: #4878b8;
+
+  /* spacing */
+  --space-eight: 0.2rem;
+  --space-quarter: 0.4rem;
+  --space-half: 0.8rem;
+  --space-default: 1.6rem;
+  --space-double: 3.2rem;
+  --space-quad: 6.4rem;
+  --space-oct: 12.8rem;
+
+  /* typography */
+  --font-family-sans: 'Muli', sans-serif;
+  --font-family-serif: 'Yeseva One', serif;
+
+  /* font weights */
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-black: 900;
+}
+
+/* RESET & DEFAULT STYLING */
+html {
+  box-sizing: border-box;
+  /* usually -> */
+  /* 1rem = 16px */
+  font-size: 62.5%;
+  /* makes 1rem = 10px */
+  /* easier because 12px = 1.2rem */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: 1.6rem;
+  /* 16px */
+  background-color: #fff;
+}
+
+/* TYPE SPECS */
+.t-brand {
+  font-family: var(--font-family-sans);
+  font-size: 2.4rem;
+  font-weight: var(--weight-black);
+  line-height: 1;
+}
+
+.t-copy-large {
+  font-family: var(--font-family-sans);
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+
+.t-display {
+  font-family: var(--font-family-serif);
+  letter-spacing: -0.2rem;
+}
+/* mobile */
+@media (max-width: 575px) {
+  .t-display {
+    font-size: 3.2rem;
+    line-height: 1.25;
+  }
+}
+/* desktop */
+@media (min-width: 576px) {
+  .t-display {
+    font-size: 8rem;
+    line-height: 1.2;
+  }
+}
+
+.t-body {
+  font-family: var(--font-family-sans);
+  font-size: 1.4rem;
+  font-weight: var(--weight-regular);
+  line-height: 1.286;
+  /* the following can be seen in figma */
+  /* font-height/font-size -> 18px/14px = 1.286 */
+}
+
+.t-title {
+  font-family: var(--font-family-sans);
+  font-weight: var(--weight-black);
+}
+/* mobile */
+@media (max-width: 575px) {
+  .t-title {
+    font-size: 2.4rem;
+    line-height: 1.167;
+  }
+}
+/* desktop */
+@media (min-width: 576px) {
+  .t-title {
+    font-size: 2.8rem;
+    line-height: 1.243;
+  }
+}
+
+.t-section-number {
+  font-family: var(--font-family-serif);
+  font-size: 12rem;
+  line-height: 1;
+  letter-spacing: -0.2rem;
+}
+
+/* responsivenes for specific cases */
+.t-copy-fluid {
+  font-family: var(--font-family-sans);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+/* mobile */
+@media (max-width: 575px) {
+  .t-copy-fluid {
+    font-size: 1.4rem;
+  }
+}
+/* desktop */
+@media (min-width: 576px) {
+  .t-copy-fluid {
+    font-size: 1.6rem;
+  }
+}
