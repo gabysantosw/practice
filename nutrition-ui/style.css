@@ -76,6 +76,11 @@
   --weight-regular: 400;
   --weight-bold: 700;
   --weight-black: 900;
+
+  /* design elements */
+  --transition: 300ms ease-in-out;
+  --border-radius-default: 0.4rem;
+  --border-radius-large: 0.8rem;
 }
 
 /* RESET & DEFAULT STYLING */
@@ -97,10 +102,11 @@ html, body {
 }
 
 body {
+  margin: 0;
   font-family: var(--font-family-sans);
   font-size: 1.6rem;
   /* 16px */
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 /* TYPE SPECS */
@@ -189,4 +195,175 @@ body {
   .t-copy-fluid {
     font-size: 1.6rem;
   }
+}
+
+/* screen-reader-only */
+.screen-reader-only {
+  /* visually hide */
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  /* the older version */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* newer version */
+  clip-path: inset(0px 0px 99.9% 99.9%)
+  overflow: hidden;
+  border: 0;
+}
+
+/* skip-nav */
+/* by default it shouldn't be seen */
+.skip-nav {
+  padding: var(--space-default);
+  display: inline-block;
+  color: var(--color-white);
+  background-color: var(--color-charcoal-021);
+  border-radius: var(--border-radius-default);
+  text-decoration: none;
+  /* good practice to always specify which property will
+  have the transition effect, helps with performance */
+  transition: var(--transition) background-color,
+              var(--transition) transform;
+  /* hiding the element - default */
+  position: absolute; /* so it doesn't interfere with the normal flow */
+}
+/* mobile */
+@media (max-width: 575px){
+  .skip-nav {
+    transform: translate(var(--space-default), calc(var(--space-quad) * -1));
+  }
+}
+/* desktop */
+@media (min-width: 576px){
+  .skip-nav {
+    transform: translate(var(--space-oct), calc(var(--space-quad) * -1));
+  }
+}
+.skip-nav:hover {
+  background-color: var(--color-charcoal-011);
+}
+.skip-nav:focus {
+  outline: 0.4rem solid var(--color-slate-blue-050);
+  outline-offset: 0.2rem;
+  /* showing the element - on focus */
+  transform: translate(var(--space-oct), var(--space-double));
+}
+/* mobile */
+@media (max-width: 575px){
+  .skip-nav:focus {
+    transform: translate(var(--space-default), var(--space-default));
+  }
+}
+/* desktop */
+@media (min-width: 576px){
+  .skip-nav:focus {
+    transform: translate(var(--space-oct), var(--space-double));
+  }
+}
+
+/* header */
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 575px) {
+  .header {
+    padding-right: var(--space-default);
+    padding-left: var(--space-default);
+    /* allows to acomodate in case user zooms */
+    /* using fixed height could break layout */
+    min-height: var(--space-quad);
+  }
+}
+
+/* brand */
+.brand {
+  color: var(--color-charcoal-021);
+  text-decoration: none;
+  transition: var(--transition) color;
+}
+.brand:hover {
+  color: var(--color-charcoal-046);
+}
+.brand:focus {
+  outline: 0.4rem solid var(--color-slate-blue-050);
+  outline-offset: 0.2rem;
+}
+
+/* search */
+.button-icon {
+  padding: 0;
+  min-width: 4.8rem;
+  min-height: 4.8rem;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-icon:hover {
+  cursor: pointer;
+}
+.button-icon:hover .button-icon__icon {
+  fill: var(--color-charcoal-046);
+}
+.button-icon:focus {
+  outline: 0.4rem solid var(--color-slate-blue-050);
+  outline-offset: -0.2rem;
+}
+/* BEM syntax */
+.button-icon__icon {
+  fill: var(--color-charcoal-021);
+  transition: var(--transition) fill;
+}
+
+.search {
+  /* hide search form - default */
+  /* use display because we don't want interaction
+  until the form is opened,
+  this also takes off the screen-reader trigger */
+  display: none;
+}
+/* js state */
+.search--is-open {
+  display: block;
+  /* so it stays on top of header */
+  position: absolute;
+  width: calc(100% - var(--space-default) - var(--space-default))
+}
+.search__input {
+  width: 100%;
+  height: 4.8rem;
+  color: var(--color-charcoal-021);
+  border: none;
+  border-bottom: 0.2rem solid var(--color-charcoal-021);
+}
+.search__input::placeholder {
+  color: var(--color-charcoal-046);
+}
+/* browser prefixes are better added after styling is done */
+/* using them already for testing */
+.search__input::-webkit-input-placeholder {
+  color: var(--color-charcoal-046);
+}
+.search__input::-moz-placeholder {
+  color: var(--color-charcoal-046);
+}
+.search__input::-ms-placeholder {
+  color: var(--color-charcoal-046);
+}
+.search__input::placeholder {
+  color: var(--color-charcoal-046);
+}
+.search__input:focus {
+  border-bottom-color: var(--color-slate-blue-050);
+}
+
+.search__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
