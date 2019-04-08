@@ -124,6 +124,24 @@ body {
   line-height: 1;
 }
 
+.t-link {
+  font-family: var(--font-family-sans);
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  color: var(--color-charcoal-021);
+  transition: var(--transition) color,
+              var(--transition) outline-color;
+  outline: 0.4rem solid transparent;
+}
+.tlink:hover {
+  color: var(--color-charcoal-046);
+}
+.telink:focus {
+  outline-color: var(--color-slate-blue-050);
+  outline-offset: 0.2rem;
+}
+
 .t-display {
   font-family: var(--font-family-serif);
   letter-spacing: -0.2rem;
@@ -224,9 +242,12 @@ body {
   /* good practice to always specify which property will
   have the transition effect, helps with performance */
   transition: var(--transition) background-color,
-              var(--transition) transform;
+              var(--transition) transform,
+              var(--transition) outline-color;
   /* hiding the element - default */
   position: absolute; /* so it doesn't interfere with the normal flow */
+  outline: 0.4rem solid transparent;
+  outline-offset: 0.2rem;
 }
 /* mobile */
 @media (max-width: 575px){
@@ -244,8 +265,7 @@ body {
   background-color: var(--color-charcoal-011);
 }
 .skip-nav:focus {
-  outline: 0.4rem solid var(--color-slate-blue-050);
-  outline-offset: 0.2rem;
+  outline-color: var(--color-slate-blue-050);
   /* showing the element - on focus */
   transform: translate(var(--space-oct), var(--space-double));
 }
@@ -269,7 +289,8 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 575px) {
+/* breakpoint increased */
+@media (max-width: 1024px) {
   .header {
     padding-right: var(--space-default);
     padding-left: var(--space-default);
@@ -278,19 +299,30 @@ body {
     min-height: var(--space-quad);
   }
 }
+@media (min-width: 1024px) {
+  .header {
+    padding-right: var(--space-oct);
+    padding-left: var(--space-oct);
+    /* allows to acomodate in case user zooms */
+    /* using fixed height could break layout */
+    min-height: var(--space-oct);
+  }
+}
 
 /* brand */
 .brand {
   color: var(--color-charcoal-021);
   text-decoration: none;
-  transition: var(--transition) color;
+  transition: var(--transition) color,
+              var(--transition) outline-color;
+  outline: 0.4rem solid transparent;
+  outline-offset: 0.2rem;
 }
 .brand:hover {
   color: var(--color-charcoal-046);
 }
 .brand:focus {
-  outline: 0.4rem solid var(--color-slate-blue-050);
-  outline-offset: 0.2rem;
+  outline-color: var(--color-slate-blue-050);
 }
 
 /* search */
@@ -299,20 +331,30 @@ body {
   min-width: 4.8rem;
   min-height: 4.8rem;
   background-color: transparent;
+  color: var(--color-charcoal-021);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition) outline-color,
+              var(--transition) color;
+  outline: 0.4rem solid transparent;
+  outline-offset: 0.2rem;
 }
 .button-icon:hover {
   cursor: pointer;
+  color: var(--color-charcoal-046);
 }
 .button-icon:hover .button-icon__icon {
   fill: var(--color-charcoal-046);
 }
+/* takes away dotted border on focus */
+/* is a default on mozilla */
+.button-icon::-moz-focus-inner {
+  border: none;
+}
 .button-icon:focus {
-  outline: 0.4rem solid var(--color-slate-blue-050);
-  outline-offset: -0.2rem;
+  outline-color: var(--color-slate-blue-050);
 }
 /* BEM syntax */
 .button-icon__icon {
@@ -337,6 +379,8 @@ body {
 .search__input {
   width: 100%;
   height: 4.8rem;
+  padding-right: 6.4rem;
+  padding-left: 0.8rem;
   color: var(--color-charcoal-021);
   border: none;
   border-bottom: 0.2rem solid var(--color-charcoal-021);
@@ -360,10 +404,83 @@ body {
 }
 .search__input:focus {
   border-bottom-color: var(--color-slate-blue-050);
+  border-width: 0.4rem;
+  /* fixing the jump effect */
+  transform: translateY(0.1rem);
 }
 
 .search__submit {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* HEADER__CENTER */
+.header__center {
+  display: flex;
+  align-items: center;
+}
+
+
+/* CENTER-NAV */
+/* we jump another media query breaking point */
+/* because with 575 theres not enough spacing */
+@media (max-width: 786px) {
+  .center-nav {
+    /* why we use display none instead of hidding them like screen reader content? */
+    /* bc these links will be replicated in global menu on mobile so itll be redundant */
+    display: none;
+  }
+}
+
+/* CENTER-NAV__ITEMS */
+.center-nav__items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+/* when nav-center shows */
+@media (min-width: 787px) and (max-width: 1199px) {
+  .center-nav__items {
+    /* spacing between search button icon when open */
+    margin-left: var(--space-quad);
+  }
+}
+@media (min-width: 1200px) {
+
+}
+
+/* CENTER-NAV__ITEM */
+.center-nav__item {
+  list-style: none;
+  /* we reference our design for padding */
+}
+/* everything but the first item */
+.center-nav__item:not(:first-child) {
+  margin-left: var(--space-double);
+}
+
+/* MENU-TRIGGER */
+/* mobile */
+@media (max-width: 575px) {
+  .menu-trigger__icon--small {
+    margin-left: var(--space-half)
+  }
+  .menu-trigger__icon--large {
+    display: none;
+  }
+}
+/* desktop */
+@media (min-width: 576px) {
+  .menu-trigger__icon--small {
+    display: none;
+  }
+  .menu-trigger__icon--large {
+    margin-left: var(--space-default);
+  }
+}
+
+/* MENU */
+.menu {
+  display: none;
 }
