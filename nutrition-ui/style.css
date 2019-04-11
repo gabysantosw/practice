@@ -250,13 +250,13 @@ body {
   outline-offset: 0.2rem;
 }
 /* mobile */
-@media (max-width: 575px){
+@media (max-width: 1024px){
   .skip-nav {
     transform: translate(var(--space-default), calc(var(--space-quad) * -1));
   }
 }
 /* desktop */
-@media (min-width: 576px){
+@media (min-width: 1025px){
   .skip-nav {
     transform: translate(var(--space-oct), calc(var(--space-quad) * -1));
   }
@@ -270,62 +270,19 @@ body {
   transform: translate(var(--space-oct), var(--space-double));
 }
 /* mobile */
-@media (max-width: 575px){
+@media (max-width: 1024px){
   .skip-nav:focus {
     transform: translate(var(--space-default), var(--space-default));
   }
 }
 /* desktop */
-@media (min-width: 576px){
+@media (min-width: 1025px){
   .skip-nav:focus {
     transform: translate(var(--space-oct), var(--space-double));
   }
 }
 
-/* header */
-.header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-}
-/* breakpoint increased */
-@media (max-width: 1024px) {
-  .header {
-    padding-right: var(--space-default);
-    padding-left: var(--space-default);
-    /* allows to acomodate in case user zooms */
-    /* using fixed height could break layout */
-    min-height: var(--space-quad);
-  }
-}
-@media (min-width: 1024px) {
-  .header {
-    padding-right: var(--space-oct);
-    padding-left: var(--space-oct);
-    /* allows to acomodate in case user zooms */
-    /* using fixed height could break layout */
-    min-height: var(--space-oct);
-  }
-}
-
-/* brand */
-.brand {
-  color: var(--color-charcoal-021);
-  text-decoration: none;
-  transition: var(--transition) color,
-              var(--transition) outline-color;
-  outline: 0.4rem solid transparent;
-  outline-offset: 0.2rem;
-}
-.brand:hover {
-  color: var(--color-charcoal-046);
-}
-.brand:focus {
-  outline-color: var(--color-slate-blue-050);
-}
-
-/* search */
+/* BUTTONS */
 .button-icon {
   padding: 0;
   min-width: 4.8rem;
@@ -362,6 +319,53 @@ body {
   transition: var(--transition) fill;
 }
 
+/* header */
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+/* breakpoint increased */
+@media (max-width: 1024px) {
+  .header {
+    margin-bottom: var(--space-double);
+    padding-right: var(--space-default);
+    padding-left: var(--space-default);
+    /* allows to acomodate in case user zooms */
+    /* using fixed height could break layout */
+    min-height: var(--space-quad);
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    margin-bottom: var(--space-quad);
+    padding-right: var(--space-oct);
+    padding-left: var(--space-oct);
+    /* allows to acomodate in case user zooms */
+    /* using fixed height could break layout */
+    min-height: var(--space-oct);
+  }
+}
+
+/* brand */
+.brand {
+  color: var(--color-charcoal-021);
+  text-decoration: none;
+  transition: var(--transition) color,
+              var(--transition) outline-color;
+  outline: 0.4rem solid transparent;
+  outline-offset: 0.2rem;
+}
+.brand:hover {
+  color: var(--color-charcoal-046);
+}
+.brand:focus {
+  outline-color: var(--color-slate-blue-050);
+}
+
+
+/* SEARCH */
 .search {
   /* hide search form - default */
   /* use display because we don't want interaction
@@ -374,8 +378,34 @@ body {
   display: block;
   /* so it stays on top of header */
   position: absolute;
-  width: calc(100% - var(--space-default) - var(--space-default))
+  /* centering orizontally */
+  /* this will make it begin at 50% */
+  left: 50%;
+  /* this will transform relative to the element */
+  /* now it will be centered */
+  transform: translateX(-50%);
 }
+@media (max-width: 575px) {
+  .search--is-open {
+    width: calc(100% - var(--space-default) - var(--space-default));
+  }
+}
+@media (min-width: 576px) and (max-width: 786px) {
+  .search--is-open {
+    width: 28rem;
+  }
+}
+@media (min-width: 787px) and (max-width: 1199px){
+  .search--is-open {
+    width: 44rem;
+  }
+}
+@media (min-width: 1200px) {
+  .search--is-open {
+    width: 50rem;
+  }
+}
+
 .search__input {
   width: 100%;
   height: 4.8rem;
@@ -483,4 +513,131 @@ body {
 /* MENU */
 .menu {
   display: none;
+}
+
+.menu--is-open {
+  background-color: var(--color-white);
+  box-shadow: -0.4rem 0 4rem rgba(40, 51, 66, 0.5);
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  /* allows scrolling the menu if necesary */
+  overflow-y: auto;
+}
+@media (max-width: 575px) {
+  .menu--is-open {
+    width: 28.8rem;
+    padding-right: var(--space-double);
+    padding-bottom: var(--space-quad);
+    padding-left: var(--space-double);
+  }
+}
+@media (min-width: 576px) {
+  .menu--is-open {
+    width: 34.4rem;
+    padding-right: var(--space-quad);
+    padding-bottom: var(--space-quad);
+    padding-left: var(--space-quad);
+  }
+}
+@media (max-width: 1024px) {
+  .menu--is-open {
+    padding-top: 0.8rem;
+  }
+}
+@media (min-width: 1025px) {
+  .menu--is-open {
+    padding-top: 4rem;
+  }
+}
+
+.menu__close {
+
+}
+@media (max-width: 575px) {
+  .menu__close {
+    margin-bottom: var(--space-quad);
+  }
+}
+@media (min-width: 576px) {
+  .menu__close {
+    margin-bottom: var(--space-oct);
+  }
+}
+
+.menu__close__icon {
+  margin-right: var(--space-default);
+}
+
+.menu__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 575px) {
+  .menu__items {
+    margin-bottom: var(--space-quad);
+  }
+}
+@media (min-width: 576px) {
+  .menu__items {
+    margin-bottom: var(--space-oct);
+  }
+}
+
+.menu__item {
+  margin-bottom: var(--space-default);
+}
+
+.menu__item--mobile-only {
+
+}
+@media (max-width: 786px) {
+  /* show all the menu links on mobile */
+  .menu__item--mobile-only {
+    display: block;
+  }
+}
+@media (min-width: 787px) {
+  /* only show the ones that didn't fit in the nav center */
+  .menu__item--mobile-only {
+    display: none;
+  }
+}
+
+.menu__socials {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-quad);
+}
+
+.menu__social {
+  margin-left: var(--space-default);
+  border-radius: 50%;
+  border: 0.2rem solid var(--color-charcoal-046);
+}
+
+.menu__socials__cta {
+  color: var(--color-charcoal-046);
+}
+
+.menu__overlay {
+  display: none;
+}
+.menu__overlay--is-shown {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-charcoal-021);
+  opacity: 0.4;
+  border: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
