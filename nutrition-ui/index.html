@@ -105,7 +105,7 @@
           </li>
         </ul>
         <!-- this extra div helps with alignment -->
-        <div class="socials">
+        <div class="socials socials--spaced">
           <!-- call to action = cta -->
           <p class="t-copy-large social__cta">Connect</p>
           <a class="button-icon social" href="#">
@@ -145,8 +145,10 @@
       </p>
       <!-- srcset used to select the source with the best version -->
       <!-- we use normal src as a fallback -->
-      <img class="article__image article__image--first" srcset="./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash.jpg 1x, ./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash-2x.jpg 2x" src="./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash.jpg" alt="Blueberries in a bowl">
-      <img class="article__image article__image--second" srcset="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg 1x, ./assets/images/final/chia-pudding-by-alex-loup-unsplash-2x.jpg 2x" src="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg" alt="Chia pudding with blueberries and blackberries">
+      <div class="article__images">
+        <img class="article__image article__image--first" srcset="./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash.jpg 1x, ./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash-2x.jpg 2x" src="./assets/images/final/a-berry-full-glass-by-jess-watters-unsplash.jpg" alt="Blueberries in a bowl">
+        <img class="article__image article__image--second" srcset="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg 1x, ./assets/images/final/chia-pudding-by-alex-loup-unsplash-2x.jpg 2x" src="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg" alt="Chia pudding with blueberries and blackberries">
+      </div>
       <section>
         <h3 class="screen-reader-only">Nutrition Information</h3>
         <ul class="nutrition__items">
@@ -190,8 +192,36 @@
       <section>
       <!-- we use h2 because its not part of the article anymore -->
         <h2 class="screen-reader-only">Related Articles</h2>
-        <a class="t-title" href="#">15 Low-Sugar Fruits High in Polyphenols</a>
-        <a class="t-title" href="#">15 Best Low Carb Fruits</a>
+
+        <a class="t-title card card--featured"  href="#">
+          <span class="card__title">15 Low-Sugar Fruits High in Polyphenols</span>
+
+          <span class="card__arrow">
+            <!-- for mobile -->
+            <svg class="card__icon card__icon--small" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" role="presentation">
+              <path d="M11.6 7.657L5.943 2 5 2.943l4.714 4.714L5 12.37l.943.943L11.6 7.657z"/>
+            </svg>
+            <!-- for desktop -->
+            <svg class="card__icon card__icon--large" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation">
+              <path d="M17.9 12.485L9.414 4 8 5.414l7.071 7.071L8 19.556l1.414 1.415 7.071-7.072 1.415-1.414z"/>
+            </svg>
+          </span>
+        </a>
+
+        <a class="t-title card" href="#">
+          <span class="card__title">15 Best Low Carb Fruits</span>
+          <span class="card__arrow">
+            <!-- for mobile -->
+            <svg class="card__icon card__icon--small" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" role="presentation">
+              <path d="M11.6 7.657L5.943 2 5 2.943l4.714 4.714L5 12.37l.943.943L11.6 7.657z"/>
+            </svg>
+            <!-- for desktop -->
+            <svg class="card__icon card__icon--large" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation">
+              <path d="M17.9 12.485L9.414 4 8 5.414l7.071 7.071L8 19.556l1.414 1.415 7.071-7.072 1.415-1.414z"/>
+            </svg>
+          </span>
+        </a>
+
       </section>
       <section>
         <h2 class="screen-reader-only">Choose article section</h2>
