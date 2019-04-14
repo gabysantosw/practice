@@ -156,14 +156,14 @@ body {
 /* in between breakpoint */
 @media (min-width: 576px) and (max-width: 1399px) {
   .t-display {
-    font-size: 5.6rem;
+    font-size: 4rem;
     line-height: 1.143;
   }
 }
 /* desktop */
 @media (min-width: 1400px) {
   .t-display {
-    font-size: 8rem;
+    font-size: 6.5rem;
     line-height: 1.2;
   }
 }
@@ -655,10 +655,21 @@ body {
 .main {
 
 }
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
   .main {
     padding-right: var(--space-default);
     padding-left: var(--space-default);
+  }
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .main {
+    padding-right: var(--space-oct);
+    padding-left: var(--space-oct);
+  }
+}
+@media (max-width: 1199px) {
+  .main {
+    margin-bottom: var(--space-double);
   }
 }
 @media (min-width: 1200px) {
@@ -674,20 +685,73 @@ body {
 .article {
   grid-area: article;
 }
+@media (max-width: 476px) {
+  .article {
+    display: grid;
+    grid-template-columns: calc(16rem - var(--space-double)) var(--space-double) calc(16rem - var(--space-double)) 1fr;
+    grid-template-rows: auto var(--space-double) auto var(--space-default) calc(16rem - var(--space-default)) var(--space-default) calc(16rem - var(--space-default)) var(--space-default) auto;
+    grid-template-areas:
+      "headline headline headline headline"
+      ". . . ."
+      "content content content content"
+      ". . . ."
+      "first-image first-image . ."
+      ". second-image second-image ."
+      ". . . ."
+      ". . . ."
+      "supporting supporting supporting supporting"
+  }
+}
+@media (min-width: 476px) and (max-width: 1703px) {
+  .article {
+    margin-bottom: var(--space-double);
+    display: grid;
+    grid-template-columns: 16rem var(--space-default) 16rem 1fr;
+    grid-template-rows: auto var(--space-double) auto var(--space-default) 16rem var(--space-default) auto;
+    grid-template-areas:
+      "headline headline headline headline"
+      ". . . ."
+      "content content content content"
+      ". . . ."
+      "first-image . second-image ."
+      ". . . ."
+      "supporting supporting supporting supporting"
+  }
+}
 @media (max-width: 1199px) {
   .article {
     margin-bottom: var(--space-double);
   }
 }
+@media (min-width: 1704px) {
+  .article {
+    margin-bottom: var(--space-double);
+    display: grid;
+    grid-template-columns: 51.2rem 1fr var(--space-oct) 16rem;
+    grid-template-rows: auto var(--space-quad) auto var(--space-double) var(--space-oct) auto;
+    grid-template-areas:
+      "headline headline headline ."
+      ". . . ."
+      "content content . ."
+      "content content . first-image"
+      ". . . first-image"
+      "supporting second-image . ."
+  }
+}
 
 .article__heading {
   margin-top: 0;
+  grid-area: headline;
   color: var(--color-charcoal-021);
 }
 @media (max-width: 575px) {
   .article__heading {
-    margin-bottom: var(--space-double);
+    /* margin-bottom: var(--space-double); */
   }
+}
+
+.article__content {
+  grid-area: content;
 }
 
 .article__section-heading {
@@ -714,13 +778,15 @@ body {
   margin-top: 0;
   color: var(--color-charcoal-046);
 }
-@media (max-width: 575px) {
-  .article__body {
+/* @media (max-width: 575px) { */
+  .article__body:last-of-type {
     margin-bottom: var(--space-default);
   }
-}
+/* } */
 
-@media (max-width: 475px) {
+
+/* article images */
+/* @media (max-width: 475px) {
   .article__images {
     display: grid;
     grid-template-columns: calc(16rem - var(--space-double)) var(--space-double) calc(16rem - var(--space-double));
@@ -735,7 +801,7 @@ body {
     grid-gap: var(--space-default);
     margin-bottom: var(--space-default);
   }
-}
+} */
 
 .article__image {
   width: 16rem;
@@ -744,6 +810,7 @@ body {
 }
 .article__image--first {
   z-index: 1;
+  grid-area: first-image;
   /* position: absolute; */
 }
 @media (max-width: 475px) {
@@ -757,12 +824,18 @@ body {
   /* pinning it to the right */
   /* margin-left: auto; */
   /* margin-bottom: var(--space-default); */
+  grid-area: second-image;
+  justify-self: end;
 }
 @media (max-width: 475px) {
   .article__image--second {
-    grid-column: 2 / 4;
-    grid-row: 2 / 4;
+    /* grid-column: 2 / 4;
+    grid-row: 2 / 4; */
   }
+}
+
+.article__supporting {
+  grid-area: supporting;
 }
 
 /* NUTRITION INFO */
@@ -814,6 +887,31 @@ body {
 .aside {
   grid-area: aside;
 }
+@media (max-width: 1199px) {
+  .aside {
+    margin-bottom: var(--space-double);
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.related-articles {
+
+}
+@media (min-width: 624px) and (max-width: 1199px) {
+  .related-articles {
+    /* display: flex;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: 28.8rem 28.8rem;
+    grid-gap: var(--space-default);
+  }
+}
+@media (min-width: 1200px) {
+  .related-articles {
+    margin-bottom: var(--space-double);
+  }
+}
 
 .card {
   width: 100%;
@@ -852,20 +950,26 @@ body {
 }
 @media (max-width: 1199px) {
   .card {
-    margin-bottom: var(--space-default);
     padding-right: var(--space-default);
     padding-left: var(--space-default);
     max-width: 28.8rem;
     height: 16rem;
   }
 }
+@media (max-width: 623px) {
+  .card:first-of-type {
+    margin-bottom: var(--space-default);
+  }
+}
 @media (min-width: 1200px) {
   .card {
-    margin-bottom: var(--space-double);
     padding-right: var(--space-double);
     padding-left: var(--space-double);
     max-width: 36rem;
     height: 20rem;
+  }
+  .card:first-of-type {
+    margin-bottom: var(--space-double);
   }
 }
 
@@ -915,5 +1019,49 @@ body {
 @media (min-width: 1200px) {
   .card__icon--small {
     display: none;
+  }
+}
+
+.section-selector {
+
+}
+@media (max-width: 1199px) {
+  .section-selector {
+    max-width: 28.8rem;
+    margin-bottom: var(--space-double);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .section-selector__section-number {
+    order: 1;
+  }
+  .section-selector__previous {
+    order: 0;
+  }
+  .section-selector__next {
+    order: 2;
+  }
+}
+@media (min-width: 1200px) {
+  .section-selector {
+    max-width: 36rem;
+    margin-bottom: var(--space-double);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .section-selector__section-number {
+    order: 1;
+    /* margin-bottom: var(--space-double); */
+  }
+  .section-selector__previous {
+    order: 0;
+    /* margin-bottom: var(--space-double); */
+  }
+  .section-selector__next {
+    order: 2;
   }
 }
