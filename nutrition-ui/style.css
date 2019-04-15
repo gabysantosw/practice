@@ -373,13 +373,14 @@ body {
 
 
 /* SEARCH */
-.search {
+.search:not(.search--is-open) {
   /* hide search form - default */
   /* use display because we don't want interaction
   until the form is opened,
   this also takes off the screen-reader trigger */
   display: none;
 }
+
 /* js state */
 .search--is-open {
   display: block;
@@ -450,6 +451,44 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  outline-offset: -0.4rem;
+}
+
+.search__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline-offset: -0.4rem;
+  /* visually hiding by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition) opacity;
+}
+.search__close:focus {
+  /* activate registering pointer events */
+  pointer-events: auto;
+  opacity: 1;
+}
+.search__close::before {
+  /* this will hide the icon underneath */
+  content='';
+  width: 2.4rem;
+  height: 2.4rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* centering */
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white)
+}
+
+.search__close__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 /* HEADER__CENTER */
@@ -518,7 +557,7 @@ body {
 }
 
 /* MENU */
-.menu {
+.menu:not(.menu--is-open) {
   display: none;
 }
 
@@ -530,7 +569,7 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
   /* allows scrolling the menu if necesary */
   overflow-y: auto;
 }
@@ -624,16 +663,22 @@ body {
 }
 
 .social {
-  margin-left: var(--space-default);
   border-radius: 50%;
   border: 0.2rem solid var(--color-charcoal-046);
 }
+.social:not(:first-of-type) {
+  margin-left: var(--space-default);
+}
+.social:first-of-type {
+  margin-left: var(--space-double);
+}
+
 
 .social__cta {
   color: var(--color-charcoal-046);
 }
 
-.menu__overlay {
+.menu__overlay:not(.menu__overlay--is-shown) {
   display: none;
 }
 .menu__overlay--is-shown {
@@ -649,6 +694,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 2;
 }
 
 /* MAIN */
@@ -877,11 +923,12 @@ body {
   color: var(--color-charcoal-046);
 }
 
-@media (max-width: 575px) {
+/* not needed */
+/* @media (max-width: 575px) {
   .article__share {
     margin-bottom: var(--space-double);
   }
-}
+} */
 
 /* ASIDE  */
 .aside {
@@ -907,9 +954,9 @@ body {
     grid-gap: var(--space-default);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .related-articles {
-    margin-bottom: var(--space-double);
+    margin-bottom: var(--space-quad);
   }
 }
 

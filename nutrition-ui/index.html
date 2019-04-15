@@ -15,7 +15,7 @@
   <header class="header">
     <a class="t-brand brand" href=""> Nutrition </a>
     <div class="header__center">
-      <button class="button-icon">
+      <button class="button-icon" id="open-search-form">
         <span class="screen-reader-only">
           Open search
         </span>
@@ -24,7 +24,8 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/>
         </svg>
       </button>
-      <form class="search" action="">
+      <!-- modifier: .search--is-open -->
+      <form class="search" id="search-form" action="">
         <label class="screen-reader-only" for="global-search">Search the Nutrition website</label>
         <input class="t-body search__input" type="search" id="global-search" placeholder="Avocado, tumeric, kale, etc.">
         <button class="button-icon search__submit" type="submit">
@@ -36,8 +37,16 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/>
           </svg>
         </button>
+        <button class="button-icon search__close" type="button">
+          <span class="screen-reader-only">
+            Search
+          </span>
+          <svg class="button-icon__icon search__close__icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation">
+            <path d="M12 10.222L5.778 4 4 5.778 10.222 12 4 18.222 5.778 20 12 13.778 18.222 20 20 18.222 13.778 12 20 5.778 18.222 4 12 10.222z"/>
+          </svg>
+        </button>
       </form>
-      <nav class="center-nav">
+      <nav class="center-nav" aria-label="top navigation links">
         <ul class="center-nav__items">
           <li class="center-nav__item">
             <a class="t-link" href="/food">Food</a>
@@ -54,7 +63,7 @@
         </ul>
       </nav>
     </div>
-      <button class="button-icon menu-trigger">
+      <button class="button-icon menu-trigger" id="open-menu">
         <span class="t-copy-large">Menu</span>
 
         <!-- for mobile -->
@@ -67,9 +76,9 @@
           <path d="M16 20h36v2H16zM0 2h36v2H0z"/>
         </svg>
       </button>
-      <!-- extended menu for mobile -->
-      <nav class="menu">
-        <button class="button-icon menu__close">
+      <!-- modifier: menu--is-open -->
+      <nav class="menu" id="global-menu" aria-label="global menu">
+        <button class="button-icon menu__close" id="menu-close">
           <svg class="button-icon__icon menu__close__icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation">
             <path d="M12 10.222L5.778 4 4 5.778 10.222 12 4 18.222 5.778 20 12 13.778 18.222 20 20 18.222 13.778 12 20 5.778 18.222 4 12 10.222z"/>
           </svg>
@@ -126,7 +135,8 @@
       <!-- so if user clicks here, it also closes -->
       <!-- we use aria-hidden because its only a visual add on -->
       <!-- screen readers have the close button itself -->
-      <button class="menu__overlay" aria-hidden="true">
+      <!-- modifier menu__overlay--is-shown -->
+      <button class="menu__overlay" id="menu-overlay" aria-hidden="true">
         <span class="screen-reader-only">Close Menu</span>
       </button>
   </header>
@@ -152,8 +162,8 @@
         <img class="article__image article__image--second" srcset="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg 1x, ./assets/images/final/chia-pudding-by-alex-loup-unsplash-2x.jpg 2x" src="./assets/images/final/chia-pudding-by-alex-loup-unsplash.jpg" alt="Chia pudding with blueberries and blackberries">
       <!-- </div> -->
       <div class="article__supporting">
-        <section>
-          <h3 class="screen-reader-only">Nutrition Information</h3>
+        <section aria-labelledby="nutrition-info">
+          <h3 class="screen-reader-only" id="nutrition-info">Nutrition Information</h3>
           <ul class="nutrition__items">
             <li class="t-copy-fluid nutrition__item">
               Calories:
@@ -173,8 +183,8 @@
             </li>
           </ul>
         </section>
-        <section class="socials article__share">
-          <h3 class="t-copy-large social__cta">
+        <section class="socials article__share" aria-labelledby="article-share">
+          <h3 class="t-copy-large social__cta" id="article-share">
             Share <span class="screen-reader-only">this article</span>
           </h3>
           <a class="button-icon social" href="#">
@@ -193,9 +203,9 @@
       </div>
     </article>
     <aside class="aside">
-      <section class="related-articles">
+      <section class="related-articles" aria-labelledby="related-articles">
       <!-- we use h2 because its not part of the article anymore -->
-        <h2 class="screen-reader-only">Related Articles</h2>
+        <h2 class="screen-reader-only" id="related-articles">Related Articles</h2>
 
         <a class="t-title card card--featured"  href="#">
           <span class="card__title">15 Low-Sugar Fruits High in Polyphenols</span>
@@ -227,8 +237,8 @@
         </a>
 
       </section>
-      <section class="section-selector">
-        <h2 class="screen-reader-only">Choose article section</h2>
+      <section class="section-selector" aria-labelledby="section-selector">
+        <h2 class="screen-reader-only" id="section-selector">Choose article section</h2>
         <!-- this number shows the 03 type of berry of 20 -->
         <p class="section-selector__section-number">
           <span class="screen-reader-only">You are viewing section</span>
@@ -251,5 +261,6 @@
     </aside>
   </main>
 
+<script src="script.js"></script>
 </body>
 </html>
