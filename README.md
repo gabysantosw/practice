@@ -6,8 +6,8 @@ Code of challenges / tutorials I completed / followed along
 
 ## Challenges
 
-- :arrow_double_up: [Frontend Mentor](https://www.frontendmentor.io/challenges) - Huddle landing page with alternating feature blocks - lv1
-  - * :green_heart: [My final demo]() - :file_folder: [My source files]()
+- :arrow_double_up: [Frontend Mentor](https://www.frontendmentor.io/challenges) - CHALLENGE 1: Huddle landing page with alternating feature blocks - lv1
+  - :green_heart: [My final demo]() - :file_folder: [My source files]()
 
 
 ## Follow Along
