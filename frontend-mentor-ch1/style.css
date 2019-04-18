@@ -1,0 +1,109 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:600');
+
+:root {
+  /* COLORS */
+  --pink: hsl(322, 100%, 66%);
+  --pale-cyan: hsl(193, 100%, 96%);
+  --dark-cyan: hsl(192, 100%, 9%);
+  --gray:  hsl(208, 11%, 55%);
+  --white: hsl(0, 100%, 100%);
+
+  /* SPACING */
+  --half: 8px;
+  --default: 16px;
+  --x2: 32px;
+  --x4: 64px;
+  --x8: 128px;
+
+  /* FONT-FAMILY */
+  --heading-family: 'Poppins', sans-serif;
+  --body-family: 'Open Sans', sans-serif;
+
+  /* FONT-WEIGHT */
+  --heading-weight: 600;
+  --body-weight: 400;
+  --body-weight-bold: 700;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* mobile: 375px, desktop: 1440px */
+
+/* TYPOGRAPHY */
+.t-heading {
+  font-family: var(--heading-family);
+  font-size: 2.4rem;
+  font-weight: var(--heading-weight);
+}
+
+.t-body {
+  font-family: var(--body-family);
+  font-size: 1.8rem;
+  font-weight: var(--body-weight);
+}
+
+.t-button {
+  font-family: var(--body-family);
+  font-size: 1.8rem;
+  font-weight: var(--body-weight-bold);
+}
+
+/* HEADER SECTION */
+.header {
+  max-width: 100vw;
+  padding: 0 var(--default);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 10rem;
+}
+
+.header__button {
+}
+
+/* MAIN SECTION */
+/* MAIN > HERO SECTION */
+.hero {
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: var(--x8) var(--x2);
+  background-color: var(--pale-cyan);
+  background-image: url(starter-files/images/bg-hero-mobile.svg);
+  background-size: 100%;
+  background-position: center 10rem;
+}
+
+.hero__image {
+  max-width: 100%;
+}
+
+/* MAIN > CARDS SECTION */
+
+.card__image {
+  max-width: 100%;
+}
+
+/* MAIN > LAST SECTION */
+
+/* FOOTER SECTION */
+.footer__logo {
+  fill: white;
+}
