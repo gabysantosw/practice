@@ -2,15 +2,11 @@
 
 ## Todos
 
-- add social Icons
-  - [Font Awesome](https://fontawesome.com/)
-  - [IcoMoon](https://icomoon.io/)
-  - [Ionicons](https://ionicons.com/)
 - completely test mobile
 - develop desktop
 - test desktop
-- add accesibility to social icons
-- test accessibility 
+- add accessibility to social icons
+- test accessibility
 
 ## Notes
 
