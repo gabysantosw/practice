@@ -64,13 +64,13 @@ ul {
 .body {
   min-height: 100vh;
   background-color: var(--violet);
-  background-image: url('/starter-files/images/bg-mobile.svg');
+  background-image: url('starter-files/images/bg-mobile.svg');
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 @media (min-width: 1024px) {
   .body {
-    background-image: url('/starter-files/images/bg-desktop.svg');
+    background-image: url('starter-files/images/bg-desktop.svg');
     background-size: auto 100%;
   }
 }
