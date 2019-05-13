@@ -14,6 +14,7 @@
   --d2: 8px;
   --x1: 16px;
   --x2: 32px;
+  --x3: 48px;
   --x4: 64px;
   --x8: 128px;
   --x16: 256px;
@@ -48,16 +49,32 @@ ul {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
+@media (min-width: 1025px) {
+  .t-heading {
+    font-size: 2.4rem;
+  }
+}
 
 .t-body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.0rem;
   line-height: 1.5rem;
 }
+@media (min-width: 1025px) {
+  .t-body {
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+  }
+}
 
 .t-button {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
+}
+@media (min-width: 1025px) {
+  .t-button {
+    font-size: 1.2rem;
+  }
 }
 
 /* BASICS */
@@ -67,8 +84,10 @@ ul {
   background-image: url('starter-files/images/bg-mobile.svg');
   background-size: 100% auto;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .body {
     background-image: url('starter-files/images/bg-desktop.svg');
     background-size: auto 100%;
@@ -76,52 +95,90 @@ ul {
 }
 
 .header {
-  padding: var(--x1) var(--x2);
+  padding: var(--x2) var(--x2);
+}
+@media (min-width: 1025px) {
+  .header {
+    padding: var(--x4) var(--x4);
+  }
 }
 
 .logo {
-  width: 10rem;
+  width: 160px;
+}
+@media (min-width: 1025px) {
+  .logo {
+    width: 220px;
+  }
 }
 
 /* MAIN */
 .main {
-  padding: var(--x1) var(--x2);
+  flex-grow: 1;
+  padding: var(--x2) var(--x2);
   color: var(--light);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .main {
-    width: 100vw;
-    height: calc(100vh - 10rem);
-    padding: var(--x8) var(--x2);
+    width: 100%;
+    padding: var(--x2) var(--x4);
     box-sizing: border-box;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .zone:not(:last-child) {
+    margin-bottom: var(--x4);
+  }
+}
+
+@media (min-width: 1025px) {
+  .main__image-zone {
+    height: 90%;
   }
 }
 
 .image {
+  width: 500px;
   max-width: 100%;
-  margin-top: var(--x1);
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .image {
-    max-width: 50vw;
-    height: calc(100vh - 10rem);
+    flex-grow: 2;
+    width: auto;
     box-sizing: border-box;
-    margin-right: var(--x4);
+    padding-right: var(--x4);
+  }
+}
+
+.main__content-zone {
+  width: 600px;
+  max-width: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1025px) {
+  .main__content-zone {
+    width: auto;
+    max-width: 550px;
+    height: 90%;
+    justify-content: flex-start;
   }
 }
 
 .title {
-  margin-top: var(--x2);
+  margin-bottom: var(--x1);
   text-align: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .title {
-    width: 25rem;
     margin-right: auto;
     padding-right: 5rem;
     box-sizing: border-box;
@@ -130,21 +187,18 @@ ul {
 }
 
 .description {
-  max-width: 40rem;
-  margin-top: var(--x1);
+  margin-bottom: var(--x2);
   color: var(--d-light);
   text-align: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .description {
-    max-width: 25rem;
     margin-right: auto;
     text-align: left;
   }
 }
 
 .button {
-  margin-top: var(--x2);
   padding: var(--d2) var(--x4);
   border: none;
   border-radius: 10rem;
@@ -157,7 +211,7 @@ ul {
   box-shadow: none;
   cursor: pointer;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .button {
     max-width: 25rem;
     box-sizing: border-box;
@@ -168,25 +222,22 @@ ul {
 
 /* FOOTER */
 .footer {
-  margin-top: var(--x2);
-  padding: var(--x1) var(--x2);
+  padding: var(--x2) var(--x2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .footer {
-    height: 1rem;
-    margin-top: var(--x1);
+    padding: var(--x2) var(--x4);
     flex-direction: row;
   }
 }
 
 .socials {
   width: 10rem;
-  margin-top: var(--x2);
-  margin-bottom: var(--x2);
+  margin-bottom: var(--x1);
   list-style: none;
   display: flex;
   align-items: center;
