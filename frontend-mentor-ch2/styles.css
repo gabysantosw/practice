@@ -8,6 +8,7 @@
   --light: hsl(257, 40%, 99%);
   --d-light: hsl(257, 40%, 95%);
   --dark: hsl(257, 40%, 29%);
+  --focus: hsl(200, 100%, 50%);
 
   /* SPACING */
   --d4: 4px;
@@ -77,18 +78,53 @@ ul {
   }
 }
 
+/* UTILITY */
+
+.focus:focus {
+  outline: 3px dotted var(--focus);
+  outline-offset: 5px;
+}
+
+.screen-reader {
+  /* visually hide */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
 /* BASICS */
 .body {
   min-height: 100vh;
   background-color: var(--violet);
-  background-image: url('starter-files/images/bg-mobile.svg');
+  /* background-image: url('starter-files/images/bg-mobile.svg');
   background-size: 100% auto;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   display: flex;
   flex-direction: column;
 }
+.body::after {
+  /* to add some opacity to svg bg */
+  content: "";
+  background-image: url('starter-files/images/bg-mobile.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 @media (min-width: 1025px) {
-  .body {
+  .body::after {
+    content: "";
     background-image: url('starter-files/images/bg-desktop.svg');
     background-size: auto 100%;
   }
