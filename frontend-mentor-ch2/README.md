@@ -1,7 +1,11 @@
 # Frontend Mentor Challenge 2
+Huddle landing page with single introductory section
+
+## Live site
+
+:green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch2/)
 
 ## Todo:
-
 
 ## Resources
 
