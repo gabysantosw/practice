@@ -1,10 +1,7 @@
 # Frontend Mentor Challenge 2
 
 ## Todo:
-- ~~check accessibility~~
-- ~~add better focus to buttons~~
-- ~~add alt text to social buttons~~
-- ~~test by keyboard and screenreader~~
+
 
 ## Resources
 
