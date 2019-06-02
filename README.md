@@ -14,6 +14,10 @@ Code of challenges / tutorials I completed / followed along
 
 ## Follow Along
 
+- :arrow_forward: [Firebase Authentication Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ) by The Net Ninja ~3h 3m
+  - :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
+  - :green_heart: [My live version](https://gabysantosw.github.io/practice/firebase-authentication/) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/firebase-authentication)
+
 - :arrow_forward: [Firebase Firestore Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB) by The Net Ninja ~1h 5m
   - :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
   - :green_heart: [My live version](https://gabysantosw.github.io/practice/firebase-firestore/) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/firebase-firestore)
