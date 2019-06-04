@@ -18,9 +18,9 @@ Code of challenges / tutorials I completed / followed along
   - :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
   - :green_heart: [My live version](https://gabysantosw.github.io/practice/firebase-authentication/) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/firebase-authentication)
 
-- :arrow_forward: [Firebase Firestore Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB) by The Net Ninja ~1h 5m
-  - :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
-  - :green_heart: [My live version](https://gabysantosw.github.io/practice/firebase-firestore/) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/firebase-firestore)
++ :arrow_forward: [Firebase Firestore Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB) by The Net Ninja ~1h 5m
+  + :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
+  + :green_heart: [My live version (read only)](https://gabysantosw.github.io/practice/firebase-firestore/) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/firebase-firestore)
 
 * :arrow_forward: [Nutrition UI Series](https://www.youtube.com/watch?v=Z8LFbc3zFTE&list=PLKFUh46KjXESnnC7TZwd_qc-GwdPRiOnl) by Build UX - Youtube ~6h 34m
   * :globe_with_meridians: [Build UX Channel](https://www.youtube.com/channel/UCHTt4tr25_wdGiJQcKD8wzA)
