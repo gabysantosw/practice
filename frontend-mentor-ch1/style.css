@@ -18,6 +18,7 @@
   --half: 8px;
   --x1: 16px;
   --x2: 32px;
+  --x3: 48px;
   --x4: 64px;
   --x8: 128px;
   --x16: 256px;
@@ -55,7 +56,7 @@ h1, h2, p {
   font-family: var(--heading-family);
   font-size: 2.4rem;
   font-weight: var(--heading-weight);
-  line-height: 3.0rem;
+  line-height: 3.4rem;
 }
 @media (min-width: 1024px) {
   .t-heading {
@@ -98,7 +99,7 @@ h1, h2, p {
 /* ELEMENTS */
 
 .pink-button {
-  padding: var(--x1) var(--x2);
+  padding: var(--x1) var(--x3);
   border: none;
   border-radius: 5rem;
   background-color: var(--pink);
@@ -108,8 +109,10 @@ h1, h2, p {
 }
 .pink-button:hover {
   cursor: pointer;
-  background-color: var(--dark-cyan);
-  color: var(--pale-cyan);
+  /* background-color: var(--dark-cyan);
+  color: var(--pale-cyan); */
+  opacity: .7;
+  box-shadow: none;
 }
 
 /* HEADER SECTION */
@@ -129,7 +132,7 @@ h1, h2, p {
 }
 @media (min-width: 1024px) {
   .header {
-    height: 8rem;
+    height: 10rem;
     padding: 0 var(--x4);
   }
 }
@@ -152,9 +155,17 @@ h1, h2, p {
 }
 .header__button:hover {
   cursor: pointer;
-  background-color: var(--pink);
-  color: var(--white)
+  /* background-color: var(--pink);
+  color: var(--white); */
+  opacity: .5;
+  box-shadow: none;
 }
+@media (min-width: 1024px) {
+  .header__button {
+    padding: var(--x1) var(--x3);
+  }
+}
+
 
 
 /* MAIN SECTION */
@@ -175,7 +186,6 @@ h1, h2, p {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 @media (min-width: 1024px) {
@@ -184,17 +194,33 @@ h1, h2, p {
     max-height: 90vh;
     padding: var(--x8) var(--x4);
     text-align: left;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
+.hero-left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero-left-part {
+    align-items: flex-start;
+  }
+}
+
+.hero-right-part {
+
+}
+
 .hero__heading {
-  max-width: 45rem;
+  max-width: 300px;
   margin-bottom: var(--x1);
 }
 @media (min-width: 1024px) {
   .hero__heading{
+    max-width: 400px;
     margin-bottom: var(--x2);
   }
 }
@@ -215,12 +241,12 @@ h1, h2, p {
 }
 @media (min-width: 1024px) {
   .hero__button {
-    margin-right: 25rem;
+
   }
 }
 
 .hero__image {
-  width: 40rem;
+  width: 600px;
   max-width: 90%;
 }
 @media (min-width: 1024px) {
