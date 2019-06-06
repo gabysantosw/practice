@@ -471,7 +471,7 @@ body {
 }
 .search__close::before {
   /* this will hide the icon underneath */
-  content='';
+  content:'';
   width: 2.4rem;
   height: 2.4rem;
   display: block;
