@@ -1,0 +1,84 @@
+// TEXT STYLES
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+// BACKGROUNDS
+.bg {
+  &-primary {
+    @include set-background($primary);
+  }
+  &-light {
+    @include set-background($light);
+    border: #ccc 1px solid;
+  }
+  &-dark {
+    @include set-background($dark);
+  }
+  &-successs {
+    @include set-background($success);
+  }
+  &-danger {
+    @include set-background($danger);
+  }
+  &-white {
+    @include set-background(#fff);
+    border: #ccc 1px solid;
+  }
+}
+
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0; 
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+// BUTTONS
+.btn {
+  display: inline-block;
+  background: $light;
+  color: #333;
+  padding: .4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  // outline: none;
+  transition: all .2s ease-in;
+  &:hover {
+    background: lighten($dark, 20%);
+    color: #fff;
+  }
+
+  &.btn-primary {
+    @include set-background($primary);
+    &:hover {
+      background: lighten($primary, 10%);
+    }
+  }
+  &.btn-dark {
+    @include set-background($dark);
+  }
+  &.btn-successs {
+    @include set-background($success);
+  }
+  &.btn-danger {
+    @include set-background($danger);
+  }
+}
