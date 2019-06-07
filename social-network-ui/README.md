@@ -21,6 +21,9 @@
 - tip: mixin to automatically make text color depending on background
 
 ## Part 2
+- add and work on register.html
+- good to have: a _boiler.html file that contains the basic template of all our pages, to copy and paste (added in templates folder)
+- forms: we use 'required' and 'minlength' as html5 form validation 
 
 ## Part 3
 
