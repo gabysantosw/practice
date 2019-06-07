@@ -1,6 +1,6 @@
 # Practice
 
-Code of challenges / tutorials I completed / followed along
+Challenges/tutorials I completed/followed along.
 
 -----------
 
@@ -13,6 +13,10 @@ Code of challenges / tutorials I completed / followed along
     - :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch1/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch1)
 
 ## Follow Along
+
+* :arrow_forward: [Social Network Theme / UI with Sass](https://www.youtube.com/playlist?list=PLillGF-Rfqba3xeEvDzIcUCxwMlGiewfV) by Traversy Media ~ 3h 30m
+  * :globe_with_meridians: [Traversy Media Channel](https://www.youtube.com/user/TechGuyWeb/featured)
+  * :green_heart: [My live version](https://gabysantosw.github.io/practice/social-network-ui/dist) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/social-network-ui)
 
 - :arrow_forward: [Firebase Authentication Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ) by The Net Ninja ~3h 3m
   - :globe_with_meridians: [The Net Ninja Channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg)
