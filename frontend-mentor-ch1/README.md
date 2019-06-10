@@ -2,11 +2,7 @@
 
 ## Todos
 
-- completely test mobile
-- develop desktop
-- test desktop
-- add accessibility to social icons
-- test accessibility
+- [x] change social tags to anchor (better than buttons because they link to an outside site
 
 ## Notes
 
