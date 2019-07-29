@@ -18,7 +18,7 @@ Challenges/tutorials I completed/followed along.
 
 - :arrow_forward: [Design & code](https://www.youtube.com/watch?v=88-XCq0Tezg&list=PLW0RabRDhwwzLQfL8E9SIJtZioPAc8MPn) by Skillthrive ~ 1h 20m
   - :globe_with_meridians: [Skillthrive channel](https://www.youtube.com/channel/UCvHKiUI75ytqUcN851fRR2w/playlists)
-  - :green_heart: [My live version](https://gabysantosw.github.io/practice/social-network-ui/dist) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/social-network-ui)
+  - :green_heart: [My live version](https://gabysantosw.github.io/practice/travely) - :file_folder: [My source files](https://github.com/gabysantosw/practice/tree/master/travely)
 
 * :arrow_forward: [Social Network Theme / UI with Sass](https://www.youtube.com/playlist?list=PLillGF-Rfqba3xeEvDzIcUCxwMlGiewfV) by Traversy Media ~ 3h 30m
   * :globe_with_meridians: [Traversy Media Channel](https://www.youtube.com/user/TechGuyWeb/featured)
