@@ -26,5 +26,6 @@
 - forms: we use 'required' and 'minlength' as html5 form validation 
 
 ## Part 3
+- developers page
 
 ## Part 4

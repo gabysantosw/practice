@@ -29,6 +29,12 @@
   color: $primary;
 }
 
+// IMAGES 
+
+.round-img {
+  border-radius: 50%;
+}
+
 // BACKGROUNDS
 .bg {
   &-primary {
@@ -115,5 +121,39 @@
   }
   &.alert-danger {
     @include set-background($danger);
+  }
+}
+
+// OTHERS
+.line {
+  height: 1px;
+  background: #ccc;
+  margin: 1.5rem 0;
+}
+
+// BADGES 
+.badge {
+  font-size: 0.9rem;
+  padding: 0.1rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: $light;
+  color: #333;
+
+  &.badge-primary {
+    @include set-background($primary);
+  }
+}
+
+// TABLES 
+
+.table {
+  th, td {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  th {
+    background: $light;
   }
 }
