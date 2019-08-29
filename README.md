@@ -6,14 +6,33 @@ Challenges/tutorials I completed/followed along.
 
 ## Challenges
 
-- :arrow_double_up: [Frontend Mentor](https://www.frontendmentor.io/challenges)
-  - __Challenge 2:__ Huddle landing page with single introductory section
-    - :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch2/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch2)
-  - __Challenge 1:__ Huddle landing page with alternating feature blocks - lv1
-    - :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch1/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch1)
++ :arrow_double_up: [Frontend Mentor](https://www.frontendmentor.io/challenges)
+  + __Challenge 2:__ Huddle landing page with single introductory section
+    + :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch2/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch2)
+  + __Challenge 1:__ Huddle landing page with alternating feature blocks - lv1
+    + :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch1/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch1)
+
+
 - :arrow_double_up: [Frontloops Markup](https://frontloops.io/)
   - __Loop 1 - Step 1:__
-    -  :green_heart: [Live](https://gabysantosw.github.io/practice/fronloops-markup/Loop1-Step1/assetsindex.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/fronloops-markup/Loop1-Step1/assets/)
+    -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step1/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step1/assets/)
+  - __Loop 1 - Step 2:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step2/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step2/assets/)
+  - __Loop 1 - Step 3:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step3/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step3/assets/)
+  - __Loop 1 - Step 4:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step4/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step4/assets/)
+  - __Loop 1 - Step 5:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step5/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step5/assets/)
+  - __Loop 1 - Step 6:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step6/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step2/assets/)
+  - __Loop 1 - Step 7:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step7/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step7/assets/)
+  - __Loop 1 - Step 8:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step8/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step8/assets/)
+  - __Loop 1 - Step 9:__
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step9/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step9/assets/)
+  
 
 
 ## Follow Along
