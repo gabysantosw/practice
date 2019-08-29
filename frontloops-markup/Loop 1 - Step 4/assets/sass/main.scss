@@ -1,0 +1,230 @@
+// utils > _variables
+$primary: hsl(210, 55%, 60%);
+$light: hsl(210, 30%, 98%);
+$dark: hsl(210, 30%, 10%);
+$grey: hsl(210, 10%, 40%);
+
+$danger: hsl(0, 55%, 60%);
+
+$bg-light: hsl(210, 20%, 90%);
+$bg-dark: hsl(210, 40%, 60%);
+
+// base > _resets
+
+body, h6, p {
+  margin: 0;
+}
+
+// base > _base
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 1em;
+  background-image: linear-gradient(to bottom, $bg-light, $bg-dark);
+  font-family: Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// components > _chat
+.chat {
+  width: 600px;
+  max-width: 100%;
+  background-color: $light;
+
+  &__header {
+    padding: 1em 1.5em;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+  }
+
+  &__status {
+    box-sizing: border-box;
+    width: .4rem;
+    height: .4rem;
+    margin-right: 1em;
+    border-radius: 50%;
+    background-color: $light;
+  }
+
+  &__name {
+    color: $light;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    flex-grow: 1;
+  }
+
+  &__close {
+    &:hover {
+      cursor: pointer;
+      opacity: .5;
+    }
+  }
+
+  &__content {
+    padding: 1em 1em .5em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__separator {
+    width: 100%;
+    margin-bottom: 1em;
+    color: lighten($grey, 40%);
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before, &::after {
+      content: '';
+      width: 40%;
+      height: .1rem;
+      background-color: lighten($grey, 40%);
+      display: inline-block;
+    }
+    &::before {
+      margin-right: 1em;
+    }
+    &::after {
+      margin-left: 1em;
+    }
+  }
+
+  &__message {
+    max-width: 80%;
+    margin-bottom: 1em;
+    position: relative;
+
+    &--received, &--sent {
+      padding-top: 1.5em;
+    }
+
+    &--received {
+      align-self: flex-start;
+    }
+
+    &--sent {
+      align-self: flex-end;
+    }
+
+    &--block {
+      align-self: flex-end;
+    }
+  }
+
+  &__message-time {
+    color: lighten($grey, 30%);
+    font-size: .8rem;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+
+    &--received {
+      left: .1rem;
+    }
+
+    &--sent {
+      right: .1rem;
+    }
+  }
+
+  &__message-content {
+    max-width: 100%;
+    padding: .7em;
+    border-radius: 4px;
+    color: $dark;
+    font-size: .9rem;
+    position: relative;
+    display: inline-block;
+
+    &--received {
+      $color: lighten($primary, 32%);
+      background-color: $color;
+      margin-left: .5em;
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: .4rem;
+        border-style: solid;
+        border-color: $color $color transparent transparent;
+        position: absolute;
+        top: 0;
+        left: -.5rem;
+      }
+    }
+
+    &--sent {
+      $color: lighten($grey, 52%);
+      background-color: $color;
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: .4rem;
+        border-style: solid;
+        border-color: $color transparent transparent $color;
+        position: absolute;
+        top: 0;
+        right: -.5rem;
+      }
+    }
+
+    &--blocked {
+      background-color: lighten($danger, 25%);
+    }
+  }
+
+  &__reply {
+    width: 100%;
+    padding-top: .3em;
+    border-top: 2px solid lighten($grey, 40%);
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    padding: .7em 0;
+    margin-right: 1em;
+    border: none;
+    background-color: transparent;
+    flex-grow: 1;
+
+    &::placeholder {
+      font-weight: 700;
+    }
+
+    &:focus {
+      outline: 3px dashed $primary;
+    }
+  }
+
+  &__send {
+    padding: .5em;
+    border: none;
+    background: transparent;
+    color: $primary;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+
+    &:hover {
+      cursor: pointer;
+      opacity: .5;
+    }
+
+    &:focus {
+      outline: 3px dashed $primary;
+    }
+  }
+}

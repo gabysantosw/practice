@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loop 1 - Step 2</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.min.css" />
+</head>
+<body class="root">
+  <section class="card">
+    <div class="card__progress-wrapper">
+      <div class="card__progress card__progress--current"></div>
+      <div class="card__progress"></div>
+      <div class="card__progress"></div>
+    </div>
+
+    <h2 class="card__heading">Payment method</h2>
+
+    <label class="card__selection" for="visa">
+      <img class="card__selection-logo" src="./img/visa.svg" alt="">
+      <span class="card__selection-text">
+        Visa
+      </span>
+      <img  class="card__selection-check" src="./img/check.svg" alt="">
+    </label>
+    <input class="card__selection-input" type="radio" name="method" id="visa">
+
+    <label class="card__selection card__selection--selected" for="mastercard">
+      <img class="card__selection-logo" src="./img/mastercard.svg" alt="">
+      <span class="card__selection-text">
+        Mastercard
+      </span>
+      <img class="card__selection-check" src="./img/check.svg" alt="">
+    </label>
+    <input class="card__selection-input" type="radio" name="method" id="mastercard">
+
+    <label class="card__selection" for="maestro">
+      <img class="card__selection-logo" src="./img/maestro.svg" alt="">
+      <span class="card__selection-text">
+        Maestro
+      </span>
+      <img  class="card__selection-check" src="./img/check.svg" alt="">
+    </label>
+    <input class="card__selection-input" type="radio" name="method" id="maestro">
+
+    <button class="card__button">
+      Next step
+      <img src="./img/arrow.svg" alt="">
+    </button>
+  </section>
+</body>
+</html>

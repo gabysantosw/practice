@@ -12,6 +12,7 @@ Challenges/tutorials I completed/followed along.
   - __Challenge 1:__ Huddle landing page with alternating feature blocks - lv1
     - :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch1/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch1)
 - :arrow_double_up: [Frontloops Markup](https://frontloops.io/)
+  - Loop 1 - Step 1 :green_heart: [Live](https://gabysantosw.github.io/practice/fronloops-markup/loop-1-step-1/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/fronloops-markup/loop-1-step-1/assets/)
 
 
 ## Follow Along

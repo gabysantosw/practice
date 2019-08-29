@@ -1,0 +1,89 @@
+// UTILS
+// _variables
+$primary: hsl(220, 50%, 70%);
+$darken-primary: darken($primary, 20%);
+$light: hsl(220, 10%, 98%);
+$darken-light: darken($light, 5%);
+$dark: hsl(220, 10%, 10%);
+$lighen-dark: lighten($dark, 30%);
+
+$card-radius: 4px;
+
+// BASE
+// _resets
+body, h3, p {
+  margin: 0;
+}
+
+// _base
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: $primary;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// COMPONENTS
+// _pricing
+.pricing {
+  max-width: 1024px;
+  padding: 1em;
+  border-radius: $card-radius;
+  background-color: $light;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr;
+}
+
+.card {
+  padding: 1em 2em;
+  border-radius: $card-radius;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    background-color: $darken-light;
+  }
+
+  &__image {
+    width: 5rem;
+    margin-bottom: 1em;
+  }
+
+  &__heading {
+    margin-bottom: 1em;
+    color: $darken-primary;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+  }
+
+  &__description {
+    margin-bottom: 1em;
+    color: $lighen-dark;
+    line-height: 1.4rem;
+    // so the pricings stay aligned at the bottom
+    flex-grow: 1;
+  }
+
+  &__pricing {
+    color: $darken-primary;
+
+    span {
+      &:nth-child(1) {
+        font-size: 1rem;    
+      }
+      &:nth-child(2) {
+        font-size: 2rem;
+        font-weight: 900;
+      }
+      &:nth-child(3) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

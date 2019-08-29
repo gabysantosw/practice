@@ -1,0 +1,351 @@
+// ------- UTILS ------------
+// --- variables
+// colorbook
+$primary: hsl(40, 90%, 70%);
+$accent: hsl(230, 35%, 65%);
+$success: hsl(95, 50%, 60%);
+
+$light: hsl(40, 10%, 98%);
+$dark: hsl(40, 10%, 5%);
+
+$neutro: hsl(225, 5%, 40%);
+$light-neutro: hsl(225, 5%, 93%);
+
+// styles
+$main-radius: .25rem;
+
+// --- functions 
+// --- mixins
+@mixin for-portrait {
+  @media screen and (orientation:portrait), screen and (max-width: 49rem) { 
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media screen and (max-width: 31.25rem) { 
+    @content;
+  }
+}
+
+// --- placeholders
+
+// ------- BASE -------------
+// --- reset 
+body, h2, p, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+// --- base
+html {
+  @include for-mobile() {
+    font-size: 90%;
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: $primary;
+  font-family: Roboto, sans-serif;
+  color: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ------- COMPONENTS -------
+// --- card
+.card {
+  width: 50rem;
+  max-width: 100%;
+  height: 28rem;
+  max-height: 100%;
+  background-color: $light;
+  overflow: hidden;
+  border-radius: $main-radius;
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+
+  @include for-portrait() {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: 100%;
+  }
+
+  @include for-mobile() {
+    height: auto;
+  }
+
+  // SECTION
+  &__wallets {
+    padding: 2rem 1rem;
+    background-color: $light-neutro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+
+    // to hide scrollbar
+    //scrollbar-width: none;
+
+    // minimal scrollbar
+    scrollbar-width: thin;
+  }
+
+  // layout
+  &__wallets-header {
+    width: 14rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+    @include for-portrait() {
+      width: 26.25rem;
+    }
+  }
+
+  &__wallets-nav {
+    width: 14rem;
+    max-width: 100%;
+
+    // extra because of the overflow
+    padding-bottom: 1rem;
+
+    @include for-portrait() {
+      width: 38rem;
+      
+      // not needed 
+      padding-bottom: 0;
+    }
+
+    ul {
+      @include for-portrait() {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @include for-mobile() {
+        display: block;
+      }
+    }
+
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+
+        @include for-portrait() {
+          margin-right: 1rem;
+        }
+
+        @include for-mobile() {
+          margin-right: 0;
+        }
+      }    
+    }
+  }
+
+  // elements 
+  &__wallets-heading {
+    color: $dark;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-right: auto;
+  }
+
+  &__add {
+    border: none;
+    background-color: transparent;
+    transition: opacity .4s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: .5;
+    }
+  }
+
+  &__wallet-link {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 100%;
+    padding: .5rem 2rem .5rem .5rem;
+    border: .2rem solid transparent;
+    border-radius: $main-radius;
+    background-color: $light;
+    box-shadow: 0 0rem .1rem $neutro;
+    color: $neutro;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform .4s ease-in;
+    backface-visibility: hidden;
+
+    @include for-mobile() {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    &--selected {
+      border-color: $accent;
+    }
+  }
+
+  &__wallet-icon {
+    width: 3rem;
+    margin-bottom: 1rem;
+
+    @include for-mobile() {
+      margin: 0;
+    }
+  }
+
+  &__wallet-number {
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+
+    @include for-mobile() {
+      margin: 0;
+    }
+  }
+
+  &__wallet-valid {
+    font-size: 0.8125;
+  }
+
+  // SECTION
+  &__balance {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+
+    // to hide scrollbar
+    //scrollbar-width: none;
+
+    // minimal scrollbar
+    scrollbar-width: thin;
+  }
+
+  // layout 
+  &__balance-header {
+    width: 26.25rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__balance-list {
+    width: 26.25rem;
+    max-width: 100%;
+    padding-top: 2rem;
+    border-top: .1rem solid $neutro;
+  }
+
+  // elements 
+  &__balance-heading {
+    color: $dark;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-right: auto;
+  }
+
+  &__balance-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__action {
+    color: $dark;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      box-sizing: border-box;
+      width: 1.375rem;
+      height: 1.375rem;
+      margin-right: 2rem;
+      border: .1rem solid $neutro;
+      border-radius: 50%;
+      display: block;
+
+      @include for-mobile() {
+        margin-right: .5rem;
+      }
+    }
+
+    &--expense {
+      &::before {
+        background-image: url(../img/minus.svg);
+        background-size: 80%;
+        background-position: center;
+      }
+    }
+
+    &--expense > &-amount {
+      color: $accent;
+    }
+
+    &--deposit {
+      &::before {
+        background-image: url(../img/plus.svg);
+        background-size: 80%;
+        background-position: center;
+      }
+    }
+
+    &--deposit > &-amount {
+      color: $success;
+    }
+  }
+
+  &__action-description {
+
+    span {
+      color: $neutro;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      display: block;
+    }
+  }
+
+  &__action-amount {
+    margin-left: auto;
+  }
+
+}
+
+
+// ------- LAYOUT -----------
+
+// ------- PAGES ------------
+
+// ------- THEMES -----------
