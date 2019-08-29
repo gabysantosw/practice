@@ -13,7 +13,7 @@ Challenges/tutorials I completed/followed along.
     - :green_heart: [Live](https://gabysantosw.github.io/practice/frontend-mentor-ch1/) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontend-mentor-ch1)
 - :arrow_double_up: [Frontloops Markup](https://frontloops.io/)
   - __Loop 1 - Step 1:__
-    -  :green_heart: [Live](https://gabysantosw.github.io/practice/fronloops-markup/Loop 1 - Step 1/assetsindex.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/fronloops-markup/loop-1-step-1/assets/)
+    -  :green_heart: [Live](https://gabysantosw.github.io/practice/fronloops-markup/Loop1-Step1/assetsindex.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/fronloops-markup/Loop1-Step1/assets/)
 
 
 ## Follow Along
