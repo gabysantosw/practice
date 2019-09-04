@@ -1,0 +1,52 @@
+// VARIABLES
+// $primary: hsl(5, 75%, 65%);
+$primary: hsl(5, 75%, 55%);
+
+$light: hsl(0, 0%, 100%);
+$dark: hsl(0, 0%, 20%);
+$overlay: hsla(0, 0%, 10%, .7);
+
+$neutro: hsl(0, 0%, 65%);
+$dark-neutro: hsl(0, 0%, 50%);
+
+// MIXINS
+@mixin screenreader-only {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px; 
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+@mixin content-control {
+  box-sizing: border-box;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// media queries
+// @mixin for-portrait {
+//   @media screen and (orientation:portrait), screen and (max-width: 49rem) { 
+//     @content;
+//   }
+// }
+
+@mixin for-portrait {
+  @media screen and (orientation:portrait) { 
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media screen and (max-width: 48rem) { 
+    @content;
+  }
+}

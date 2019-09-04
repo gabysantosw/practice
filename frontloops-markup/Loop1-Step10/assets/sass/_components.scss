@@ -1,0 +1,180 @@
+// NAVIGATION LIST
+.nav-list {
+  display: flex;
+  
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__link {
+    border-bottom: .15rem solid transparent;
+    color: $dark-neutro;
+    font-size: .8125rem;
+    letter-spacing: 2.5%;
+    line-height: 2;
+    text-decoration: none;
+    display: inline-block;
+    opacity: .7;
+    transition: all .4s;
+
+    &:hover {
+      opacity: 1;
+      border-bottom-color: $dark-neutro;
+    }
+  }
+}
+
+// SEARCH BAR
+.search-bar {
+  border: none;
+
+  &__legend {
+    @include screenreader-only;
+  }
+
+  &__label {
+
+  }
+
+  &__input {
+    border: none;
+    border-bottom: .15rem solid $dark-neutro;
+    background-color: $light;
+    color: $dark-neutro;
+    font-size: .8125rem;
+    line-height: 2;
+    opacity: .5;
+    transition: opacity .4s;
+
+    &::placeholder {
+      color: $dark;
+    }
+    
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+// FEATURE
+.feature {
+  width: 25rem;
+  max-width: 100%;
+
+  &__heading {
+    margin-bottom: 1.25em;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    @include for-mobile {
+      margin-bottom: .5em;
+      font-size: 2rem;
+    }
+
+    &--light {
+      color: $light;
+    }
+  }
+
+  &__text {
+    margin-bottom: 3em;
+    padding-left: 1.75rem;
+    border-left: .15rem solid $neutro;
+    color: $neutro;
+    font-size: .8125rem;
+    line-height: 1.5;
+
+    @include for-mobile {
+      margin-bottom: 2em;
+    }
+
+    &--light {
+      color: $light;
+      border-left: .15rem solid $light;
+    }
+  }
+
+  &__button {
+    padding: .75rem 2.25rem;
+    border: none;
+    background-color: $primary;
+    color: $light;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: .8;
+    transition: opacity .4s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+}
+
+// TIP
+.tip {
+  max-width: 17rem;
+
+  &__heading {
+    margin-bottom: 2.875rem;
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 1.25rem;
+    font-size: .8125rem;
+    line-height: 1.85;
+
+    &--simple {
+      &::after {
+        content: '...';
+        color: $neutro;
+        font-size: 2rem;
+        letter-spacing: .75rem; 
+        line-height: 1;
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    padding: .5rem 0;
+    border: none;
+    background-color: transparent;
+    color: $primary;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    transition: transform .4s;
+    backface-visibility: hidden;
+
+    &::before {
+      content: '';
+      width: 1.875rem;
+      height: .1rem;
+      margin-right: .75rem;
+      background-color: $primary;
+      display: block;
+      transition: transform .4s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translateX(1.875rem);
+    }
+
+    &:hover::before {
+      transform: scaleX(2) translateX(-50%);
+      transform-origin: left;
+    }
+  }
+}

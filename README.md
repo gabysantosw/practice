@@ -32,6 +32,8 @@ Challenges/tutorials I completed/followed along.
      -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step8/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step8/assets/)
   - __Loop 1 - Step 9:__ ![alt](frontloops-markup/Loop1-Step9/design/Loop%201%20-%20Step%209.png)
      -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step9/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step9/assets/)
+   - __Loop 1 - Step 10:__ ![alt](frontloops-markup/Loop1-Step10/design/Loop%201%20-%20Step%2010.png)
+     -  :green_heart: [Live](https://gabysantosw.github.io/practice/frontloops-markup/Loop1-Step10/assets/index.html) - :file_folder: [Source files](https://github.com/gabysantosw/practice/tree/master/frontloops-markup/Loop1-Step10/assets/)
   
 
 
