@@ -129,11 +129,12 @@ body {
   // CONTENT
   &__content {
     display: flex;
-    max-width: 100%;
+    width: 100%;
 
     @include for-portrait {
       display: block;
       width: 30rem;
+      max-width: 100%;
     }
   }
 
