@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loop 2 - Step 2</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.min.css" />
+</head>
+<body>
+  <div class="body">
+    <section class="settings">
+      <div class="settings__header">
+        <h1 class="settings__heading">
+          Account Settings
+        </h1>
+
+        <button class="settings__close">
+          <span class="visuallyHidden"> Close </span>
+        </button>
+      </div>
+
+      <div class="settings__content">
+        <img src="./img/avatar.jpg" alt="" class="settings__avatar">
+
+        <form action="#" class="settings__form form">
+          <fieldset class="form__fieldset">
+            <label class="form__label" for="username">Username</label>
+            <input class="form__input" type="text" id="username" name="username" placeholder="Enter your username">
+          </fieldset>
+
+          <div class="form__group">
+              <fieldset class="form__fieldset">
+                <label class="form__label" for="first-name">First Name</label>
+                <input class="form__input" type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+              </fieldset>
+
+              <fieldset class="form__fieldset">
+                <label class="form__label" for="last-name">Last Name</label>
+                <input class="form__input" type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+              </fieldset>
+          </div>
+
+          <fieldset class="form__fieldset">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" type="email" id="email" name="email" placeholder="Enter your email">
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <label class="form__label" for="bio">Bio</label>
+            <textarea class="form__textarea" name="bio" id="bio" cols="30" rows="7" placeholder="Tell us about yourself"></textarea>
+          </fieldset>
+
+        </form>
+      </div>
+
+      <div class="settings__footer">
+        <button class="settings__button">
+          Cancel
+        </button>
+        <button class="settings__button settings__button--main">
+          Save
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

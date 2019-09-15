@@ -1,0 +1,220 @@
+// ------- UTILS
+// --- variables
+// colorbook
+$primary: hsl(55, 95%, 65%);
+
+$light: hsl(0, 0%, 99%);
+$dark: hsl(0, 0%, 15%);
+
+$neutro: hsl(0, 0%, 65%);
+$dark-neutro: hsl(0, 0%, 50%);
+
+$shadow: hsla(0, 0%, 15%, .5);
+
+// sizings
+$max-width: 32rem;
+
+// --- functions 
+// --- mixins
+// accessibility
+@mixin visuallyHidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyHidden {
+  @include visuallyHidden;
+}
+
+// --- placeholders
+
+// ------- BASE 
+// typography
+@mixin t-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@mixin t-label {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@mixin t-placeholder {
+  font-size: .875rem;
+  letter-spacing: 4%;
+}
+
+@mixin t-button {
+  font-size: 1.125rem;
+}
+
+// reset
+body, h1 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+// base 
+.body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: calc(1rem + 1vh) calc(1rem + 1vw);
+  background-color: $dark;
+  font-family: Roboto, sans-serif;
+}
+
+// ------- COMPONENTS
+.form {
+  &__fieldset {
+    border: none;
+  }
+
+  &__label {
+    @include t-label;
+    margin-bottom: .2em;
+    color: $neutro;
+    display: block;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .5em 0;
+    border: none;
+    border-bottom: .1rem solid $neutro;
+    line-height: 1.6;
+    display: block;
+
+    &::placeholder {
+      @include t-placeholder;
+      color: $dark-neutro;
+      opacity: 1;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: .5em 0;
+    border: none;
+    border-bottom: .1rem solid $neutro;
+    background-color: transparent;
+    font-family: inherit;
+    line-height: 1.6;
+
+    &::placeholder {
+      @include t-placeholder;
+    }
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-column-gap: 1em;
+  }
+}
+
+// ------- LAYOUT
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+// ------- PAGES
+.settings {
+  $left-spacing: calc(1rem + 1vw);
+  box-sizing: border-box;
+  width: $max-width;
+  max-width: 100%;
+  background-color: $primary;
+
+  // HEADER: heading, close
+  &__header {
+    padding: $left-spacing calc(1rem + 1vh);
+    display: flex;
+    align-items: center;
+  }
+
+  &__heading {
+    @include t-heading;
+    margin-right: auto;
+  }
+
+  &__close {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(../img/cross.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2rem;
+    transition: opacity .2s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: .7;
+    }
+  }
+
+  // CONTENT: avatar, form
+  &__content {
+    // extra spacing for avatar
+    margin-top: 1.5rem;
+    padding: 
+      calc(2rem + 2vh)
+      calc(1rem + 1vw)
+      calc(1rem + 1vh)
+      calc(1rem + 1vw)
+    ;
+    background-color: $light;
+    position: relative;
+    left: $left-spacing;
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 4rem;
+    top: 0;
+    transform: translate(-50%, -50%)
+  }
+
+  // FOOTER: buttons
+  &__footer {
+    padding: 1rem $left-spacing calc(1rem + 1vh) $left-spacing;
+    display: flex;
+    justify-content: flex-end;
+    backface-visibility: hidden;
+  }
+
+  &__button {
+    @include t-button;
+    padding: .5em 2em;
+    transition: transform .4s;
+
+    &--main {
+      background-color: $dark;
+      color: $light;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-.3rem);
+    }
+  }
+}
+
+// ------- THEMES
