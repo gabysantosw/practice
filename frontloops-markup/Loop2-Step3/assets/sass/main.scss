@@ -1,0 +1,162 @@
+// ------- UTILS
+// --- variables
+// colorbook
+$primary: hsl(260, 20%, 40%);
+
+$light: hsl(260, 20%, 99%);
+
+// effects 
+$shadow: hsla(260, 10%, 10%, .3);
+
+// for gradients
+$bg-1: hsl(270, 65%, 70%);
+$bg-2: hsl(240, 70%, 70%);
+
+$color-1: hsl(280, 55%, 70%);
+$color-2: hsl(260, 50%, 65%);
+
+// spacing
+$line-position: 2rem;
+$icon-position: 1rem;
+
+// --- functions 
+// --- mixins
+// gradients
+@mixin background-gradient {
+  background-image: linear-gradient(to right, $bg-1, $bg-2 )
+}
+
+@mixin header-gradient {
+  background-image: linear-gradient(to right, $color-1, $color-2);
+}
+// --- placeholders
+
+// ------- BASE 
+// reset 
+body, h2, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+// base
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.wrapper {
+  @include background-gradient;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: calc(.5rem + 1vh) calc(.5rem + 1vw);
+}
+
+// ------- COMPONENTS
+.list {
+  color: $light;
+  // header section
+  &__header {
+    @include header-gradient;
+    padding: 0 $line-position;
+    position: relative;
+
+    &--open {
+      &::after {
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        background-image: url(../img/arrow.svg);
+        background-size: cover;
+        display: block;
+        position: absolute;
+        right: $icon-position;
+        top: 50%;
+        transform: translateY(-40%);
+      }
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+    padding: .5rem;
+    border-radius: 50%;
+    background-color: $light;
+    position: absolute;
+    left: $icon-position;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__heading {
+    padding: 2rem $line-position;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    border-left: .15rem solid $light;
+  }
+
+  // content
+  &__ul {
+    padding: 0 $line-position;
+    background-color: $primary;
+  }
+
+  &__item {
+    border-left: .15rem solid $light;
+    
+    &:first-child {
+      padding-top: 1rem;
+    }
+
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: .5rem $line-position;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: opacity .2s;
+
+    &::before {
+      content: '';
+      width: .5rem;
+      height: .5rem;
+      border: .5rem solid $primary;
+      border-radius: 50%;
+      background-color: $light;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-55%, -50%);
+    }
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+// ------- LAYOUT
+.lists {
+  // design: 300px wide
+  width: 18.75rem;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 10vh;
+  border-radius: .5rem;
+  overflow: hidden;
+
+  box-shadow: 0 .5rem 1rem $shadow;
+}
+
+// ------- PAGES 
+
+// ------- THEMES
