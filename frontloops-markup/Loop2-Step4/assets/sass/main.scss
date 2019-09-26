@@ -1,0 +1,208 @@
+// ------- UTILS
+// --- variables
+// colorbook
+$primary: hsl(240, 20%, 40%);
+
+$light: hsl(240, 5%, 498%);
+$dark: hsl(240, 5%, 15%);
+
+$neutro: hsl(240, 5%, 35%);
+$light-neutro: hsl(240, 5%, 75%);
+
+// effects
+$shadow: hsla(240, 5%, 15%, .5);
+$overlay: hsla(0, 0%, 0%, .7);
+
+// --- functions 
+// --- mixins
+// accesibility
+@mixin visuallyHidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyHidden {
+  @include visuallyHidden;
+}
+// --- placeholders
+
+// ------- BASE 
+// reset 
+body, h1, h2, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// base
+body {
+  background-color: $primary;
+  font-family: Roboto, sans-serif;
+  color: $light;
+}
+
+// ------- COMPONENTS
+// navigation bar
+.nav {
+  width: 100%;
+
+  &__list {
+    display: flex;
+    height: 3.75rem;
+  }
+
+  &__item {
+    flex-basis: 20%;
+
+    &:first-child {
+      border-right: 1px solid $neutro;
+    }
+
+    &:last-child {
+      border-left: 1px solid $neutro;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    background-color: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: .7;
+    transition: opacity 400ms;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &--current {
+      box-shadow: 0 .5rem 1rem $shadow;
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    
+  }
+}
+
+// card
+.card {
+  width: 100%;
+  background-color: $light;
+  box-shadow: 0 .5rem 1rem $shadow;
+  border-radius: .25rem;
+  overflow: hidden;
+
+  // HEADER
+  &__header {
+    height: 10rem;
+    max-height: 20vh;
+    padding: calc(1rem + 1vh) calc(1rem + 1vw);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    background-size: cover;
+    
+    &--food {
+      background-image: 
+        linear-gradient(20deg, $overlay 30%, transparent),
+        url(../img/food.jpg)
+      ;
+    }
+  }
+
+  &__heading {
+    margin-bottom: .25em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+  }
+
+  &__subheading {
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__location-icon {
+    height: 1rem;
+    margin-right: .5rem;
+  }
+
+  // CONTENT 
+  &__content {
+
+  }
+
+  &__list {
+    background-color: $neutro;
+  }
+  
+  &__item {
+    &:not(:last-of-type) {
+      border-bottom: .1rem solid $light-neutro;
+    }
+  }
+  
+  &__link {
+    padding: 1.5em 1.75em;
+    background-color: $light;
+    color: $neutro;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    transition: opacity 400ms;
+
+    &:hover,
+    &:focus {
+      opacity: .85;
+    }
+  }
+
+  &__name {
+  
+  }
+
+  &__value {
+  }
+}
+
+// ------- LAYOUT
+.wrapper {
+  width: 24rem;
+  max-width: 100%;
+  margin: calc(.5rem + 1vh) auto;
+}
+
+.main {
+  padding: calc(1rem + 1vh) calc(1rem + 1vw);
+}
+
+// ------- PAGES 
+
+// ------- THEMES
